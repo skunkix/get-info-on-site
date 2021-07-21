@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import TextInput from "./TextInput";
+import Checkbox from "./Checkbox";
+import OutputBox from "./OutputBox";
+
+const QueryBox = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 10px;
+  margin: 30px;
+  padding: 30px;
+  background: lightyellow;
+`;
+
+const InputArea = styled.div`
+  display: grid;
+  grid-row-gap: 20px;
+  height: min-content;
+  flex-direction: column;
+`;
+
+const OutputArea = styled.div`
+  background: white;
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <QueryBox>
+        <InputArea>
+          <TextInput label="Enter URL:" />
+          <Checkbox label="IP Address:" />
+        </InputArea>
+        <OutputArea>
+          <OutputBox />
+        </OutputArea>
+      </QueryBox>
     </div>
   );
 }
