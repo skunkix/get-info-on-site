@@ -30,6 +30,9 @@ function App() {
         <InputArea>
           <TextInput label="Enter URL:" />
           <Checkbox label="IP Address:" />
+          <Checkbox label="Something:" />
+          <Checkbox label="Else:" />
+          <Checkbox label="Somtingelse:" />
         </InputArea>
         <OutputArea>
           <OutputBox />

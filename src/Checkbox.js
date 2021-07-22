@@ -7,8 +7,8 @@ const Input = styled.input`
 function Checkbox({ label }) {
   return (
     <div>
-      <label>{label}</label>
-      <Input type="checkbox"/>
+      <label for={label}>{label}</label>
+      <Input type="checkbox" id={label}/>
     </div>
 )
 }

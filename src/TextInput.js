@@ -7,8 +7,8 @@ const Input = styled.input`
 function TextInput({ label }) {
   return (
     <div>
-      <label>{label}</label>
-      <Input type="text"/>
+      <label for={label}>{label}</label>
+      <Input type="text" id={label}/>
     </div>
 )
 }
