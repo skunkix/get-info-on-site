@@ -4,10 +4,15 @@ const Input = styled.input`
   margin-left: 8px;
 `;
 
+const Label = styled.label`
+  min-width: 120px;
+  display: inline-block;
+`;
+
 function Checkbox({ label }) {
   return (
     <div>
-      <label for={label}>{label}</label>
+      <Label for={label}>{label}</Label>
       <Input type="checkbox" id={label}/>
     </div>
 )

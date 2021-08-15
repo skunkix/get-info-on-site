@@ -7,9 +7,9 @@ const TextArea = styled.textarea`
   resize: none;
 `;
 
-function OutputBox() {
+function OutputBox({ value }) {
   return <div>
-    <TextArea readOnly />
+    <TextArea readOnly value={value} />
   </div>;
 }
 
