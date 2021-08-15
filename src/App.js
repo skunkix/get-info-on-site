@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import TextInput from "./TextInput";
 import Checkbox from "./Checkbox";
 import OutputBox from "./OutputBox";
+import {useCallback} from "react";
+import axios from "axios";
 
 const QueryBox = styled.div`
   display: grid;
@@ -24,6 +26,19 @@ const OutputArea = styled.div`
 `;
 
 function App() {
+  const queryApi = useCallback(() => {
+    const query = `{
+      getAlbum(title: "Prequelle") {
+        artist {
+          name
+        }      
+      }
+    }`;
+    axios.post("http://localhost:4000/graphql", {
+      query
+    });
+  }, []);
+
   return (
     <div className="App">
       <QueryBox>
@@ -33,6 +48,7 @@ function App() {
           <Checkbox label="Something:" />
           <Checkbox label="Else:" />
           <Checkbox label="Somtingelse:" />
+          <button onClick={queryApi}>Query album</button>
         </InputArea>
         <OutputArea>
           <OutputBox />
