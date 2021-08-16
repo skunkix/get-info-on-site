@@ -9,13 +9,13 @@ const Label = styled.label`
   display: inline-block;
 `;
 
-function Checkbox({ label }) {
+function Checkbox({label, id, onChange}) {
   return (
     <div>
-      <Label for={label}>{label}</Label>
-      <Input type="checkbox" id={label}/>
+      <Label htmlFor={id}>{label}</Label>
+      <Input type="checkbox" id={id} onChange={onChange} defaultChecked/>
     </div>
-)
+  )
 }
 
 export default Checkbox;
